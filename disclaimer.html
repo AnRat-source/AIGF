@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temporarily Unavailable</title>
+
+  <style>
+    :root {
+      --bg: #0b0614;
+      --card: #140b24;
+      --pink: #ff5fd2;
+      --purple: #9b5cff;
+      --text: #e6dfff;
+      --muted: #b9a9d6;
+      --glow: rgba(255, 95, 210, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, rgba(155, 92, 255, 0.15), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(255, 95, 210, 0.15), transparent 40%),
+        var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 720px;
+      background: linear-gradient(180deg, #170c2c, var(--card));
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 40px var(--glow);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      color: #12091f;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 4px;
+      margin: 28px auto;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: #9a8bb8;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 32px 24px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="badge">TEMPORARILY PAUSED</div>
+
+    <h1>NeonCompanions Are On Hold</h1>
+
+    <div class="divider"></div>
+
+    <p>
+      We are currently <strong>not selling NeonCompanion products</strong> during the school year.
+    </p>
+
+    <p>
+      The owner is taking this time to focus fully on academics and personal growth.
+      Rather than delivering a rushed experience, we’ve chosen to pause and come back
+      stronger in the future.
+    </p>
+
+    <p>
+      Thank you for your understanding and patience.
+      This isn’t goodbye — just a temporary break.
+    </p>
+
+    <footer>
+      © 2025 NeonCompanion • IDC Studios
+    </footer>
+  </div>
+
+</body>
+</html>

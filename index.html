@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="Images/icon.ico" type="image/x-icon">
+  <title>NeonCompanion</title>
+  <style>
+    :root {
+      --bg: #0b0614;
+      --panel: #140a24;
+      --accent: #b84cff;
+      --accent-soft: #ff5fd2;
+      --text: #f4edff;
+      --muted: #b9a9d9;
+      --border: rgba(184, 76, 255, 0.25);
+      --glow: 0 0 25px rgba(184, 76, 255, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 20% -10%, #1a0c33, transparent),
+                  radial-gradient(1000px 500px at 100% 10%, #2a0f3f, transparent),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0 0 10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 5px 20px 5px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #1a0c33, var(--panel));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      position: relative;
+      box-shadow: var(--glow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 35px rgba(255, 95, 210, 0.35);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+    .price {
+      font-size: 2.4rem;
+      margin: 10px 0;
+      color: var(--accent-soft);
+    }
+
+    .price small {
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .sale {
+        font-size: 1rem;
+        color: var(--muted);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 30px;
+    }
+
+    ul li {
+      padding-left: 24px;
+      margin-bottom: 10px;
+      position: relative;
+      color: var(--muted);
+    }
+
+    ul li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #0b0614;
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      box-shadow: var(--glow);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    .badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: linear-gradient(90deg, #ff4fd8, #ff8df0);
+      color: #1a0c33;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .animegirls {
+        position: fixed; /* Fixes the position relative to the viewport */
+        left: 0;         /* Aligns to the left edge of the screen */
+        top: 0;          /* Aligns to the top edge (optional, but a common starting point) */
+        width: 50%;    /* Set the desired width */
+        height: 100%;    /* Makes it span the full height of the screen */
+        background-color: #4caf4f00; /* Add a background color */
+        color: white;      /* Text color */
+        padding: 15px;     /* Some padding for content */
+        box-sizing: border-box; /* Ensures padding is included in the width calculation */
+        overflow-y: none; /* Allows scrolling if content exceeds height */
+        filter: blur(5px);
+    }
+    .animegirls2 {
+        position: fixed; /* Fixes the position relative to the viewport */
+        left: 100%;         /* Aligns to the left edge of the screen */
+        top: 0;          /* Aligns to the top edge (optional, but a common starting point) */
+        width: 50%;    /* Set the desired width */
+        height: 100%;    /* Makes it span the full height of the screen */
+        background-color: #4caf4f00; /* Add a background color */
+        color: white;      /* Text color */
+        padding: 15px;     /* Some padding for content */
+        box-sizing: border-box; /* Ensures padding is included in the width calculation */
+        overflow-y: none; /* Allows scrolling if content exceeds height */
+        filter: blur(5px);
+    }
+    .bgd {
+        position: fixed;
+        left: -10%;         /* Aligns to the left edge of the screen */
+        top: -0%;
+        transform: rotate(15deg);
+    }
+    .bgdoffset {
+        position: fixed;
+        left: -35%;         /* Aligns to the left edge of the screen */
+        top: -55%;
+        transform: rotate(15deg);
+    }
+    .bgd2 {
+        position: fixed;
+        left: -70%;         /* Aligns to the left edge of the screen */
+        top: -30%;
+        transform: rotate(-15deg);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NeonCompanion</h1>
+    <p>
+      Custom AI companions that live on Discord. Designed for friendly conversation,
+      presence, and voice interaction — powered by modern AI and hosted 24/7.
+    </p>
+  </header>
+
+  <div class="animegirls">
+    <img src="/Images/Bgd.png" class="bgd">
+    <img src="/Images/Bgd.png" class="bgdoffset">
+  </div>
+  <div class="animegirls2">
+    <img src="/Images/Bgd2.png" class="bgd2">
+  </div>
+
+  <section>
+    <div class="pricing">
+
+      <div class="card">
+        <span class="badge">SALE</span>
+        <h3>Premium Plan</h3>
+        <div class="price"><del class="sale">$180</del>$80 <small>/ month</small></div>
+        <ul>
+          <li>Everything in Plus</li>
+          <li>AI speaks during calls</li>
+          <li>Optional camera vision</li>
+          <li>Highest priority servers</li>
+        </ul>
+        <a class="btn" href="/disclaimer.html">Order Premium</a>
+      </div>
+
+      <div class="card">
+        <h3>Plus Plan</h3>
+        <div class="price">$60 <small>/ month</small></div>
+        <ul>
+          <li>Everything in Chat</li>
+          <li>Image understanding</li>
+          <li>Voice calls on Discord</li>
+          <li>Improved memory</li>
+        </ul>
+        <a class="btn" href="/disclaimer.html">Order Plus Plan</a>
+      </div>
+
+      <div class="card">
+        <h3>Chat Plan</h3>
+        <div class="price">$30 <small>/ month</small></div>
+        <ul>
+          <li>Text chat on Discord</li>
+          <li>Custom personality</li>
+          <li>Always online</li>
+          <li>Private server support</li>
+        </ul>
+        <a class="btn" href="/disclaimer.html">Order Chat Plan</a>
+      </div>
+
+    </div>
+  </section>
+
+  <header>
+    <h1>DISCLAIMER</h1>
+    <p>
+      Sales are currently disabled, we apologize for the inconvenience.
+    </p>
+  </header>
+
+  <footer>
+    © 2025 NeonCompanion • IDC Studios • Discord is a trademark of Discord Inc.
+  </footer>
+
+</body>
+</html>
