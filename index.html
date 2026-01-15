@@ -266,6 +266,7 @@
         box-sizing: border-box; /* Ensures padding is included in the width calculation */
         overflow-y: none; /* Allows scrolling if content exceeds height */
         filter: blur(3px);
+        animation: breathe2 20s ease-in-out infinite;
     }
     .animegirls2 {
         position: fixed; /* Fixes the position relative to the viewport */
@@ -279,6 +280,7 @@
         box-sizing: border-box; /* Ensures padding is included in the width calculation */
         overflow-y: none; /* Allows scrolling if content exceeds height */
         filter: blur(3px);
+        animation: breathe 20s ease-in-out infinite;
     }
     .bgd {
         position: fixed;
@@ -328,6 +330,41 @@
             filter: blur(5px);
             z-index: -100;
         }
+    }
+
+    @keyframes breathe {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(2deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      75% {
+        transform: rotate(-2deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    @keyframes breathe2 {
+      0% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-2deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      75% {
+        transform: rotate(2deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
     }
   </style>
 </head>
