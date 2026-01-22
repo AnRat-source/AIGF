@@ -63,7 +63,12 @@
       padding: 80px 20px 60px;
       text-align: center;
       z-index: 10000;
+      
       border-radius: 50px;
+    }
+
+    header p {
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     }
 
     header h1 {
@@ -72,6 +77,13 @@
       background: linear-gradient(90deg, var(--accent), var(--accent-soft));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    .Logo {
+      height: 30rem;
+      width: auto;
+      margin: 0 0 -150px;
+      display: inline-block;
     }
 
     .bluredges {
@@ -251,6 +263,53 @@
       transform: scale(1.02);
     }
 
+    .special-btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #0b0614;
+      background: linear-gradient(
+        120deg,
+        #b8860b,
+        #ffd700,
+        #fff1a8,
+        #ffd700,
+        #b8860b
+      );
+      background-size: 300% 300%;
+
+      /* Glow */
+      box-shadow: 
+        0 0 12px rgba(255, 215, 0, 0.45),
+        0 0 30px rgba(255, 215, 0, 0.25);
+
+      animation: gold-shimmer 4s ease-in-out infinite;
+
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .special-btn:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    /* Animation */
+    @keyframes gold-shimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
     .badge {
       position: absolute;
       top: 18px;
@@ -398,11 +457,10 @@
   </div>
 
   <header>
-    <div class="bluredges"><div class="blurbox"></div></div>
-    <h1>NeonCompanion</h1>
+    <img src="/Images/NeonCompanionsLogo.png" class="Logo">
     <p>
       Custom AI companions that live on Discord. Designed for friendly conversation,
-      presence, and voice interaction — powered by modern AI and hosted 24/7.
+      presence, and voice interaction - powered by modern AI and hosted 24/7.
     </p>
   </header>
 
@@ -419,7 +477,7 @@
           <li>Optional camera vision</li>
           <li>Highest priority servers</li>
         </ul>
-        <a class="btn" href="/disclaimer.html">Order Premium</a>
+        <a class="special-btn" href="/disclaimer.html">Order Premium</a>
       </div>
 
       <div class="card">
